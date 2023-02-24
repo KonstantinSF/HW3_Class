@@ -10,7 +10,7 @@ namespace HW3_Class
     internal class Program
     {
 
-//IS_PALINDROM
+//IS_PALINDROM TASK2
         class Chislo
         {
             readonly int _number;
@@ -41,7 +41,7 @@ namespace HW3_Class
                 return isPalindrom; 
             }
         }
-//ARRAY_FILTRATION
+//ARRAY_FILTRATION TASK3
 class Array
         {
             char[] _originalArr;
