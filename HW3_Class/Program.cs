@@ -80,15 +80,64 @@ class Array
                 return this; 
             }
         }
+        // class SHOP TASK 6
+        class Shop
+        {
+            public static string _classifier = "Classification is \"InternetShop\"";
+            public static uint _counerObjShop = 0; 
+            readonly string _nameShop;
+            string _description;
+            string _address;
+            string _telephoneNumber;
+            string _eMail;
+            public Shop(string nameShop, string eMail = "_____@______.___", string description = " ", string address = " ", string telephoneNumber = "+7_________")
+            {
+                _nameShop = nameShop;
+                _description = description;
+                _address = address;
+                _telephoneNumber = telephoneNumber;
+                _eMail = eMail;
+                _counerObjShop++; 
+            }
+            //public string NameShop { get; set; }
+            public string Description
+            {
+                get { return _description; }
+                set { _description = value; }
+            }
+            public string Address
+            {
+                get { return _address; }
+                set { _address = value; }
+            }
+            public string TelephoneNumber
+            {
+                get { return _telephoneNumber; }
+                set { _telephoneNumber = value; }
+            }
+            public string EMail
+            {
+                get { return _eMail; }
+                set { _eMail = value; }
+            }
+            public override string ToString()
+            {
+                return $"Name \"{_nameShop}\"\t" + $"Description:{_description}\t" + $"Address:{_address}\t" + $"Tel.:{_telephoneNumber}\t" + $"EMail:{_eMail}\t"; 
+            }
 
+        }
         static void Main(string[] args)
         {
+
             ////////////////////////IS PALINDROM/////////////////////////
-            //Chislo chi = new Chislo(3232323);
+            ///
+            //Chislo chi = new Chislo(55555555);
             //chi.print();
             //if (chi.isPalindrom()) WriteLine("Palindrom");
-            //else WriteLine("Is NOT Palindrom"); 
-            //////////////////////////ARRAY FILTRATION////////////////////
+            //else WriteLine("Is NOT Palindrom");
+
+            //////////////////////ARRAY FILTRATION//////////////////////
+          
             //char[] arrCheck = { 'j', '7', '*', '%', '0', '\\' };
             //char[] eraseCheck = { 'j', '\\' };
             //Array check1 = new Array(arrCheck);
@@ -101,6 +150,16 @@ class Array
             //WriteLine("Changed Array: "); 
             //check1.print();
 
+            //////////////////////SHOP_CREATOR//////////////////////////
+
+            //Shop shopEngland = new Shop ("Liverpool");
+            //WriteLine(shopEngland);
+            //shopEngland.EMail="Liver@mail.com";
+            //shopEngland.TelephoneNumber="+79110000000";
+            //shopEngland.Description = "flee_market";
+            //shopEngland.Address = "England, Liverpool, PaulMcCartney str.b.56"; 
+            //WriteLine(shopEngland);
+            //WriteLine(Shop._classifier +"\t"+"Number of shops: "+Shop._counerObjShop); 
         }
     }
 }
