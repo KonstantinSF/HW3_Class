@@ -9,6 +9,28 @@ namespace HW3_Class
 {
     internal class Program
     {
+//SQUARE_BY_SIMBOL TASK1
+class SquareSymbol
+        {
+            uint _length;
+            char _symbol; 
+            public SquareSymbol(uint length, char symbol)
+            {
+                _length = length;
+                _symbol = symbol;
+            }
+            public void draw()
+            {
+                for (int i = 0; i < _length; i++)
+                {
+                    for (int j = 0; j<_length; j++)
+                    {
+                        Write(_symbol+" ");
+                    }
+                    WriteLine(); 
+                }
+            }
+        }
 
 //IS_PALINDROM TASK2
         class Chislo
@@ -41,33 +63,33 @@ namespace HW3_Class
                 return isPalindrom; 
             }
         }
-//ARRAY_FILTRATION TASK3
-class Array
+        //ARRAY_FILTRATION TASK3
+        class Array
         {
             char[] _originalArr;
-            public Array (char[]originalArr)
+            public Array(char[] originalArr)
             {
                 _originalArr = originalArr;
             }
             public void print()
             {
-                foreach(char ch in _originalArr) Console.Write($"{ ch}\t"); 
+                foreach (char ch in _originalArr) Console.Write($"{ ch}\t");
                 WriteLine();
             }
-            public Array ArrChange (params char[]eraseElements)
+            public Array ArrChange(params char[] eraseElements)
             {
                 int Coincidence = 0;
-                for (int i =0; i<_originalArr.Length; i++)
+                for (int i = 0; i < _originalArr.Length; i++)
                 {
-                    for (int j=0; j<eraseElements.Length; j++)
+                    for (int j = 0; j < eraseElements.Length; j++)
                     {
-                        if (_originalArr[i] == eraseElements[j]) 
+                        if (_originalArr[i] == eraseElements[j])
                         {
-                            _originalArr[i]= '\0'; Coincidence++;
+                            _originalArr[i] = '\0'; Coincidence++;
                         }
                     }
                 }
-                char[] arr = new char[_originalArr.Length-Coincidence];
+                char[] arr = new char[_originalArr.Length - Coincidence];
                 int count = 0;
                 for (int i = 0; i < _originalArr.Length; i++)
                 {
@@ -77,14 +99,14 @@ class Array
                     }
                 }
                 _originalArr = arr;
-                return this; 
+                return this;
             }
         }
         // class SHOP TASK 6
         class Shop
         {
             public static string _classifier = "Classification is \"InternetShop\"";
-            public static uint _counerObjShop = 0; 
+            public static uint _counerObjShop = 0;
             readonly string _nameShop;
             string _description;
             string _address;
@@ -97,7 +119,7 @@ class Array
                 _address = address;
                 _telephoneNumber = telephoneNumber;
                 _eMail = eMail;
-                _counerObjShop++; 
+                _counerObjShop++;
             }
             //public string NameShop { get; set; }
             public string Description
@@ -122,12 +144,16 @@ class Array
             }
             public override string ToString()
             {
-                return $"Name \"{_nameShop}\"\t" + $"Description:{_description}\t" + $"Address:{_address}\t" + $"Tel.:{_telephoneNumber}\t" + $"EMail:{_eMail}\t"; 
+                return $"Name \"{_nameShop}\"\t" + $"Description:{_description}\t" + $"Address:{_address}\t" + $"Tel.:{_telephoneNumber}\t" + $"EMail:{_eMail}\t";
             }
 
         }
         static void Main(string[] args)
         {
+            ////////////////////////SQUARE_BY_SIMBOL/////////////////////////
+
+            //SquareSymbol square1 = new SquareSymbol(11, '$');
+            //square1.draw(); 
 
             ////////////////////////IS PALINDROM/////////////////////////
             ///
@@ -137,17 +163,17 @@ class Array
             //else WriteLine("Is NOT Palindrom");
 
             //////////////////////ARRAY FILTRATION//////////////////////
-          
+
             //char[] arrCheck = { 'j', '7', '*', '%', '0', '\\' };
             //char[] eraseCheck = { 'j', '\\' };
             //Array check1 = new Array(arrCheck);
-            //WriteLine("Original Array: "); 
+            //WriteLine("Original Array: ");
             //check1.print();
             //WriteLine("Filtration parameters: ");
-            //foreach (char c in eraseCheck) Write($"{c}\t"); 
-            //WriteLine(); 
+            //foreach (char c in eraseCheck) Write($"{c}\t");
+            //WriteLine();
             //check1.ArrChange(eraseCheck);
-            //WriteLine("Changed Array: "); 
+            //WriteLine("Changed Array: ");
             //check1.print();
 
             //////////////////////SHOP_CREATOR//////////////////////////
