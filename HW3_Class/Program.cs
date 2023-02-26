@@ -9,11 +9,11 @@ namespace HW3_Class
 {
     internal class Program
     {
-//SQUARE_BY_SIMBOL TASK1
-class SquareSymbol
+        //SQUARE_BY_SIMBOL TASK1
+        class SquareSymbol
         {
             uint _length;
-            char _symbol; 
+            char _symbol;
             public SquareSymbol(uint length, char symbol)
             {
                 _length = length;
@@ -23,44 +23,44 @@ class SquareSymbol
             {
                 for (int i = 0; i < _length; i++)
                 {
-                    for (int j = 0; j<_length; j++)
+                    for (int j = 0; j < _length; j++)
                     {
-                        Write(_symbol+" ");
+                        Write(_symbol + " ");
                     }
-                    WriteLine(); 
+                    WriteLine();
                 }
             }
         }
 
-//IS_PALINDROM TASK2
+        //IS_PALINDROM TASK2
         class Chislo
         {
             readonly int _number;
-            public Chislo(int number=0) { this._number = number; }
+            public Chislo(int number = 0) { this._number = number; }
             //public int get (){return this._number; }
             public void print()
             {
-                Console.WriteLine(_number); 
+                Console.WriteLine(_number);
             }
             public bool isPalindrom()
             {
                 bool isPalindrom = false;
                 int chislo = _number;
                 int exponent = -1;
-                int reverseChislo = 0; 
+                int reverseChislo = 0;
                 while (chislo != 0)
                 {
-                    chislo /= 10; 
+                    chislo /= 10;
                     exponent++;
                 }
-                chislo = _number; 
+                chislo = _number;
                 while (chislo != 0)
                 {
                     reverseChislo += (chislo % 10) * (int)Math.Pow(10, exponent--);
-                    chislo /= 10; 
+                    chislo /= 10;
                 }
-                if (reverseChislo == _number) isPalindrom=true;
-                return isPalindrom; 
+                if (reverseChislo == _number) isPalindrom = true;
+                return isPalindrom;
             }
         }
         //ARRAY_FILTRATION TASK3
